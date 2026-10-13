@@ -20,8 +20,8 @@
 <p class="hero-lead">Ученик учит аяты. Устаз отмечает ошибки, назначает повторение и подтверждает результат. Семья видит только проверенный прогресс.</p>
 <div class="audience"><span>Ученик</span><span>Устаз</span><span>Семья</span></div>
 <div class="truth-chip">Сегодня: Engineering Alpha. На изображении — дизайн будущего продукта.</div>
-<div class="hero-actions"><a class="cta" href="#journey">Как устроен один урок <span aria-hidden="true">↗</span></a>
-<a class="cta cta--quiet" href="#evidence">Что реально готово</a></div>
+<div class="hero-actions"><a class="cta" href="#errors">Посмотреть, как Устаз отмечает ошибку <span aria-hidden="true">↗</span></a>
+<a class="cta cta--quiet" href="#journey">Как устроен урок</a></div>
 </div>
 <figure class="hero-visual">
 <a href="assets/visual-01-home.png" target="_blank" rel="noopener noreferrer" aria-label="Увеличить изображение Мусхафа WASLAH"><img src="assets/visual-01-home.png" alt="Два экрана WASLAH: Мусхаф с арабским текстом и режим скрытого заучивания" loading="eager" decoding="async">
@@ -52,29 +52,80 @@
 </div></details>
 </div></section>
 
-<section id="errors" class="section"><div class="container">
-<div class="section-heading"><div class="kicker">02 / Ключевая ценность WASLAH</div>
-<h2>Ошибка привязана к конкретному слову.</h2>
-<p class="lead">Устаз не ставит абстрактную галочку. В будущем он сможет оставить исправление прямо в контексте Мусхафа, а затем назначить повторение.</p></div>
-<div class="errors-layout">
-<div class="error-stage"><h3>01 — Где ошибка</h3>
-<a href="assets/detail-marked-word.png" target="_blank" rel="noopener noreferrer" aria-label="Открыть увеличенное выделенное слово"><img src="assets/detail-marked-word.png" alt="Золотой рамкой выделено конкретное слово в арабском тексте Мусхафа" loading="lazy" decoding="async"></a>
-<p class="figure-caption">Увеличенный фрагмент исторического макета. Позиция слова не является допущенной production-геометрией.</p>
-</div>
-<div class="error-stage note-detail"><h3>02 — Что Устаз пишет</h3>
-<a href="assets/detail-teacher-comment.png" target="_blank" rel="noopener noreferrer" aria-label="Открыть увеличенный комментарий Устаза"><img src="assets/detail-teacher-comment.png" alt="Устаз: слово 2:8:11, пропуск слова, просьба повторить выделенный участок" loading="lazy" decoding="async"></a>
-<p class="figure-caption">Пример замечания: «Пропуск слова». Аудио и официальный зачёт ещё не работают.</p>
-</div></div>
-<div class="error-step-list">
-<div class="error-step"><b>Выделить</b><span>Одно слово или точный фрагмент</span></div>
-<div class="error-step"><b>Определить</b><span>Тип ошибки, например пропуск</span></div>
-<div class="error-step"><b>Объяснить</b><span>Понятная рекомендация ученику</span></div>
-<div class="error-step"><b>Назначить</b><span>REPEAT; PASS только после проверки</span></div>
-</div>
-<details class="details-block"><summary>Посмотреть исторический кадр исправления целиком (Figma 09)</summary>
-<div class="details-inner"><figure class="screen"><a href="assets/09-marking-errors.png" target="_blank" rel="noopener noreferrer" aria-label="Увеличить изображение: Исходная страница Figma: Мусхаф Устаза и последовательность исправления"><img src="assets/09-marking-errors.png" alt="Исходная страница Figma: Мусхаф Устаза и последовательность исправления" loading="lazy" decoding="async"></a><figcaption>Исходная страница Figma: Мусхаф Устаза и последовательность исправления · Статичный экран будущего WASLAH.</figcaption></figure></div>
-</details>
-<p class="market-disclaimer">Это иллюстративный дизайн, не реальная синхронизация записи и word anchor. Устаз остаётся единственным источником официального PASS/REPEAT.</p>
+<section id="errors" class="section section--ustaz"><div class="container">
+  <div class="section-heading"><div class="kicker">02 / Устаз · как исправляется ошибка</div>
+    <h2>Вот где Устаз отмечает ошибку — прямо у слова.</h2>
+    <p class="lead">Проверьте самостоятельно четыре действия в демонстрации: выбрать слово в Мусхафе, указать тип ошибки, оставить пояснение и назначить повторение.</p>
+    <p class="teacher-demo-disclaimer">Интерактивная иллюстрация будущего интерфейса. Это не действующий Мусхаф, не анализ реальной записи и не официальный зачёт.</p>
+  </div>
+  <div class="teacher-demo" id="teacher-demo" data-step="1" aria-label="Наглядная модель действий Устаза">
+    <div class="teacher-demo-top">
+      <span class="teacher-demo-eyebrow">ПРИМЕР УРОКА · СИНТЕТИЧЕСКИЕ ДАННЫЕ</span>
+      <span class="teacher-demo-count" id="teacher-demo-counter">Шаг 1 из 4</span>
+    </div>
+    <div class="teacher-demo-grid">
+      <div class="teacher-demo-mushaf">
+        <div class="teacher-demo-page-caption"><strong>Мусхаф</strong><span>Исторический образец · 2:8</span></div>
+        <p class="teacher-demo-hint" id="teacher-demo-hint">↓ Нажмите на слово в золотой рамке</p>
+        <div class="teacher-demo-image">
+          <img src="assets/detail-marked-word.png" alt="Фрагмент демонстрационного Мусхафа. Одно слово в аяте 2:8 обведено золотой рамкой" loading="eager" decoding="async">
+          <button class="teacher-demo-word" type="button" data-ustaz-word aria-label="Выделить слово в золотой рамке. Перейти к выбору типа ошибки"><span class="visually-hidden">Нажать на выделенное слово</span></button>
+        </div>
+        <p class="teacher-demo-footnote">Золотая рамка показывает <strong>точное место замечания</strong> в макете. Позиция слова не подтверждена для production-Мусхафа.</p>
+      </div>
+      <div class="teacher-demo-editor">
+        <div class="teacher-demo-steps" role="group" aria-label="Этапы работы Устаза">
+          <button type="button" data-demo-step="1" aria-current="step"><span>01</span> Слово</button>
+          <button type="button" data-demo-step="2"><span>02</span> Ошибка</button>
+          <button type="button" data-demo-step="3"><span>03</span> Замечание</button>
+          <button type="button" data-demo-step="4"><span>04</span> Повторение</button>
+        </div>
+        <div class="teacher-demo-editor-head">
+          <span class="teacher-demo-identity">Устаз → ученик DEMO-01</span>
+          <h3 id="teacher-demo-title">1. Найти слово, которое нужно исправить</h3>
+          <p id="teacher-demo-instruction">Устаз открывает проверяемый аят и отмечает конкретное слово. Нажмите на слово в золотой рамке слева.</p>
+        </div>
+        <div class="teacher-demo-field" data-demo-panel="1">
+          <span class="teacher-demo-field-label">Место замечания</span>
+          <strong>Сура 2 · аят 8 · слово 11</strong>
+          <p>Метка привязана к одному месту в визуальном примере, а не ко всей странице.</p>
+        </div>
+        <div class="teacher-demo-field" data-demo-panel="2" hidden>
+          <span class="teacher-demo-field-label">Выберите категорию ошибки</span>
+          <div class="teacher-kind-options" role="group" aria-label="Пример типа ошибки">
+            <button type="button" data-demo-kind="Пропуск слова" aria-pressed="true">Пропуск слова</button>
+            <button type="button" data-demo-kind="Произношение" aria-pressed="false">Произношение</button>
+            <button type="button" data-demo-kind="Порядок слов" aria-pressed="false">Порядок слов</button>
+          </div>
+          <p>Категорию выбирает Устаз. AI здесь ничего не диагностирует.</p>
+        </div>
+        <div class="teacher-demo-field" data-demo-panel="3" hidden>
+          <label class="teacher-demo-field-label" for="teacher-demo-comment">Пояснение Устаза · пример</label>
+          <textarea id="teacher-demo-comment" rows="3" maxlength="180">Повтори выделенный участок и затем прочитай аят целиком.</textarea>
+          <p>Можно изменить текст для просмотра сценария. Он никуда не отправляется и не сохраняется.</p>
+        </div>
+        <div class="teacher-demo-field" data-demo-panel="4" hidden>
+          <span class="teacher-demo-field-label">Решение после проверки</span>
+          <div class="teacher-demo-decision">
+            <span class="teacher-demo-decision-name">REPEAT · повторить фрагмент</span>
+            <button type="button" class="teacher-demo-simulate" data-demo-repeat>Показать назначение повтора</button>
+          </div>
+          <p>Официальный PASS возможен только после реальной проверки преподавателем. Здесь никакой результат не записывается.</p>
+        </div>
+        <div class="teacher-demo-controls">
+          <button type="button" data-demo-prev disabled>← Назад</button>
+          <button class="teacher-demo-primary" type="button" data-demo-next>Далее: ошибка →</button>
+        </div>
+      </div>
+    </div>
+    <div class="teacher-demo-result" aria-live="polite">
+      <div class="teacher-demo-result-heading">Что увидит ученик в будущем продукте</div>
+      <p id="teacher-demo-result">Выбранный фрагмент, замечание Устаза и задание на повторение появятся в истории урока только после настоящей реализации и подтверждения.</p>
+    </div>
+  </div>
+  <details class="details-block"><summary>Увидеть полный исходный макет Устаза (Figma 09)</summary>
+    <div class="details-inner"><figure class="screen"><a href="assets/09-marking-errors.png" target="_blank" rel="noopener noreferrer" aria-label="Открыть полный исторический макет Устаза"><img src="assets/09-marking-errors.png" alt="Обзорный статичный Figma-макет Устаза с выделенным словом и этапами объяснения ошибки" loading="lazy" decoding="async"></a><figcaption>Исторический Figma-концепт; реальные word anchors, аудио и PASS/REPEAT ещё не подключены.</figcaption></figure></div>
+  </details>
 </div></section>
 
 <section id="evidence" class="section section--focus"><div class="container">

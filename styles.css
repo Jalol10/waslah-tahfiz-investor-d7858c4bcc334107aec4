@@ -233,3 +233,75 @@ main .hidden{display:none}
 
 .hero-visual a{display:flex;justify-content:center;align-items:center;min-width:0;max-width:100%;height:100%;cursor:zoom-in}
 .error-stage a{display:block;cursor:zoom-in}
+
+/* R7.1 — guided investor demonstration of a conceptual Ustaz error marker; no product data. */
+.section--ustaz .section-heading {margin-bottom:26px}
+.teacher-demo-disclaimer {font-size:13px;color:var(--gold);max-width:850px;margin:10px 0 0}
+.teacher-demo {border:1px solid rgba(201,180,134,.34);background:#0b1510;border-radius:20px;overflow:hidden}
+.teacher-demo-top {display:flex;justify-content:space-between;gap:14px;align-items:center;padding:17px 23px;background:#18291e;border-bottom:1px solid var(--border)}
+.teacher-demo-eyebrow {font-size:11px;font-weight:700;letter-spacing:.095em;color:var(--gold)}
+.teacher-demo-count {color:#e2e6da;font-size:12px;white-space:nowrap}
+.teacher-demo-grid {display:grid;grid-template-columns:1.06fr .94fr;min-width:0}
+.teacher-demo-mushaf {min-width:0;padding:22px;border-right:1px solid var(--border);background:#090d0b}
+.teacher-demo-page-caption {display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;align-items:center;color:#f4f0e6}
+.teacher-demo-page-caption strong {font-size:16px}
+.teacher-demo-page-caption span {color:var(--muted);font-size:11px}
+.teacher-demo-hint {color:var(--gold);font-size:13px;margin:13px 0 10px}
+.teacher-demo-image {position:relative;width:100%;max-width:520px;aspect-ratio:750/770;overflow:hidden;border:1px solid rgba(201,180,134,.17);background:#000}
+.teacher-demo-image img {display:block;width:100%;height:100%;object-fit:fill;max-height:none}
+.teacher-demo-word {position:absolute;top:14.5%;left:14.45%;width:15.4%;height:10.4%;min-width:44px;min-height:41px;cursor:pointer;background:rgba(201,180,134,.09);border:2px solid rgba(240,203,115,.85);border-radius:4px;box-shadow:0 0 0 4px rgba(201,180,134,.15);transition:background .15s,box-shadow .15s}
+.teacher-demo-word:hover,.teacher-demo-word:focus-visible {background:rgba(201,180,134,.23);box-shadow:0 0 0 6px rgba(201,180,134,.26);outline:2px solid var(--gold);outline-offset:2px}
+.teacher-demo-word::after {content:'Нажать';position:absolute;top:110%;left:0;font-size:10px;font-weight:700;letter-spacing:.05em;color:#080d0b;background:var(--gold);padding:4px 7px;border-radius:4px;white-space:nowrap}
+.teacher-demo-footnote {font-size:12px;line-height:1.45;color:var(--muted);margin:12px 0 0;max-width:520px}
+.teacher-demo-footnote strong {color:#e5e2d8}
+.teacher-demo-editor {padding:22px;min-width:0;display:flex;flex-direction:column}
+.teacher-demo-steps {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;margin-bottom:23px}
+.teacher-demo-steps button {font:inherit;font-size:11px;line-height:1.35;text-align:center;background:#16261c;color:#aebcae;padding:9px 5px;min-height:55px;border:1px solid var(--border);border-radius:8px;cursor:pointer}
+.teacher-demo-steps button span {display:block;font-size:12px;color:var(--gold);font-weight:750;margin-bottom:3px}
+.teacher-demo-steps button[aria-current="step"] {background:rgba(201,180,134,.16);border-color:var(--gold);color:#f7f1df}
+.teacher-demo-editor-head {margin-bottom:16px}
+.teacher-demo-identity {display:block;font-size:11px;font-weight:700;color:var(--gold);letter-spacing:.08em;margin-bottom:9px}
+.teacher-demo-editor-head h3 {font-size:24px;line-height:1.15;margin:0 0 11px}
+.teacher-demo-editor-head p {font-size:14px;color:var(--dim);line-height:1.55;margin:0}
+.teacher-demo-field {background:#1a2a20;border:1px solid rgba(186,213,189,.18);padding:19px;border-radius:13px;min-height:165px}
+.teacher-demo-field[hidden] {display:none!important}
+.teacher-demo-field-label {display:block;color:var(--gold);font-size:12px;font-weight:700;letter-spacing:.05em;margin-bottom:11px}
+.teacher-demo-field strong {font-size:20px;color:#f6f3e7}
+.teacher-demo-field p {font-size:12px;color:var(--dim);margin:10px 0 0;line-height:1.5}
+.teacher-kind-options {display:flex;flex-wrap:wrap;gap:8px}
+.teacher-kind-options button {font:inherit;font-size:12px;border:1px solid var(--border);background:#132017;padding:9px 13px;color:#e1e8df;border-radius:8px;cursor:pointer}
+.teacher-kind-options button[aria-pressed="true"] {background:rgba(201,180,134,.19);border-color:var(--gold);color:#f6e8bf}
+.teacher-demo-field textarea {width:100%;resize:vertical;min-height:94px;padding:12px;font:inherit;font-size:13px;line-height:1.45;color:#f1f0e7;background:#101b14;border:1px solid rgba(201,180,134,.35);border-radius:9px}
+.teacher-demo-decision {display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.teacher-demo-decision-name {color:#efd9a8;font-size:15px;font-weight:700}
+.teacher-demo-simulate {border:1px solid var(--gold);background:var(--gold);color:#142016;padding:10px 12px;border-radius:9px;cursor:pointer;font:inherit;font-weight:700;font-size:12px}
+.teacher-demo-controls {display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:auto;padding-top:20px}
+.teacher-demo-controls button {font:inherit;font-weight:700;font-size:12px;cursor:pointer;border-radius:9px;padding:12px 14px;background:#1d2d22;color:#f6f3e7;border:1px solid var(--border);min-height:44px}
+.teacher-demo-controls button[disabled] {opacity:.35;cursor:default}
+.teacher-demo-controls .teacher-demo-primary {background:var(--gold);color:#101810;border-color:var(--gold)}
+.teacher-demo-result {border-top:1px solid rgba(201,180,134,.25);padding:18px 24px;background:#16271c;display:grid;grid-template-columns:minmax(190px,.34fr) 1fr;gap:17px;align-items:start}
+.teacher-demo-result-heading {color:var(--gold);font-size:12px;font-weight:700}
+.teacher-demo-result p {margin:0;color:#d2dacd;font-size:13px;line-height:1.5}
+.visually-hidden {position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+@media(max-width:900px){
+ .teacher-demo-grid {grid-template-columns:1fr}
+ .teacher-demo-mushaf {border-right:none;border-bottom:1px solid var(--border)}
+ .teacher-demo-image {margin:auto}
+ .teacher-demo-editor {min-height:420px}
+}
+@media(max-width:650px){
+ .teacher-demo-top {padding:12px 13px;gap:8px}
+ .teacher-demo-eyebrow {font-size:9px}
+ .teacher-demo-count {font-size:11px}
+ .teacher-demo-mushaf,.teacher-demo-editor {padding:13px}
+ .teacher-demo-page-caption span {font-size:10px}
+ .teacher-demo-hint {font-size:12px}
+ .teacher-demo-word {min-height:44px}
+ .teacher-demo-editor-head h3 {font-size:21px}
+ .teacher-demo-steps {gap:4px}
+ .teacher-demo-steps button {font-size:10px;padding:8px 2px}
+ .teacher-demo-field {min-height:145px;padding:14px}
+ .teacher-demo-result {grid-template-columns:1fr;gap:6px;padding:15px}
+ .teacher-demo-controls {padding-top:15px}
+ .teacher-demo-controls button {font-size:11px;padding:9px 11px}
+}
