@@ -26,7 +26,7 @@
 </div>
 <figure class="hero-visual">
 <a href="assets/visual-01-home.png" target="_blank" rel="noopener noreferrer" aria-label="Увеличить изображение Мусхафа WASLAH"><img src="assets/visual-01-home.png" alt="Два экрана WASLAH: Мусхаф с арабским текстом и режим скрытого заучивания" loading="eager" decoding="async">
-</a><figcaption>Figma · концепт будущего Мусхафа · нажмите для увеличения</figcaption>
+</a><figcaption>Figma · концепт будущего Мусхафа · нажмите для увеличения</figcaption><p class="figure-language-warning">Подписи внутри исходных изображений пока на русском. Содержание урока описано на выбранном языке.</p>
 </figure></div>
 </section>
 
@@ -48,6 +48,12 @@
   <span class="guardian-story-eyebrow">СЕМЬЯ · ТОЛЬКО ПОДТВЕРЖДЁННЫЕ ДАННЫЕ</span>
   <strong>Родитель видит результат после решения Устаза.</strong>
   <p>Никаких автоматических PASS на основании нажатия ученика. Личный хатм отделён от официального педагогического результата.</p>
+  <div class="guardian-proof" aria-label="Наглядный пример будущей семейной сводки">
+    <div class="guardian-proof-head"><span>СЕМЕЙНАЯ СВОДКА · ПРИМЕР</span><span>Будущий интерфейс</span></div>
+    <div class="guardian-proof-row guardian-proof-row--verified"><span class="guardian-proof-dot" aria-hidden="true"></span><div><strong>Проверено Устазом</strong><p>Семья увидит результат только после подтверждённой проверки.</p></div></div>
+    <div class="guardian-proof-row guardian-proof-row--pending"><span class="guardian-proof-dot" aria-hidden="true"></span><div><strong>Ожидает проверки</strong><p>Личная отметка ученика не является официальным зачётом.</p></div></div>
+    <p class="guardian-proof-caveat">Это иллюстрация двух возможных состояний. Настоящие оценки и данные детей здесь не используются.</p>
+  </div>
   <a href="#khatm7">Посмотреть отдельный семидневный хатм →</a>
 </div>
 </div>
@@ -89,11 +95,11 @@
         <div class="teacher-demo-editor-head">
           <span class="teacher-demo-identity">Устаз → ученик DEMO-01</span>
           <h3 id="teacher-demo-title">1. Найти слово, которое нужно исправить</h3>
-          <p id="teacher-demo-instruction">Устаз открывает проверяемый аят и отмечает конкретное слово. Нажмите на слово в золотой рамке слева.</p>
+          <p id="teacher-demo-instruction">Устаз открывает проверяемый аят и отмечает конкретное слово. Нажмите на золотую рамку на изображении Мусхафа.</p>
         </div>
         <div class="teacher-demo-field" data-demo-panel="1">
           <span class="teacher-demo-field-label">Место замечания</span>
-          <strong>Сура 2 · аят 8 · слово 11</strong>
+          <strong data-demo-reference dir="ltr">Сура 2 · аят 8 · слово 11</strong>
           <p>Метка привязана к одному месту в визуальном примере, а не ко всей странице.</p>
         </div>
         <div class="teacher-demo-field" data-demo-panel="2" hidden>
@@ -183,7 +189,7 @@
 <p class="lead">Разделяем реальные тесты, изображения будущего приложения и необходимые условия коммерческого продукта.</p></div>
 <div class="status-grid">
 <article class="status-panel"><div class="status-tag">Работает · Test-only</div><h3>CORE + защищённая Alpha</h3>
-<ul><li>Проверенная серверная логика, роли и ограничения полномочий.</li><li>Авторизованные диагностические сценарии и HOLD-only UI.</li><li>Версионированная изолированная Chrome Alpha, проверочные регрессии.</li></ul></article>
+<ul><li>Серверные тесты ролей и ограничений доступа; это не полный аудит защиты данных.</li><li>Авторизованные диагностические сценарии и HOLD-only UI.</li><li>Версионированная изолированная Chrome Alpha, проверочные регрессии.</li></ul></article>
 <article class="status-panel"><div class="status-tag">Дизайн-концепт</div><h3>Целевой опыт обучения</h3>
 <ul><li>Мусхаф, скрытие и подсказки, параметры прослушивания.</li><li>Отметки Устаза, экран родителя, личный хатм.</li><li>Эти экраны пока не составляют готовую сквозную функцию.</li></ul></article>
 <article class="status-panel"><div class="status-tag">Следующий этап</div><h3>Первый полный урок</h3>
@@ -194,6 +200,7 @@
 <a href="https://github.com/Jalol10/waslah-tahfiz/pull/6" target="_blank" rel="noopener noreferrer">UI Alpha · Draft PR #6 ↗</a>
 <a href="https://github.com/Jalol10/waslah-tahfiz/issues/3" target="_blank" rel="noopener noreferrer">Quran source · HOLD ↗</a>
 </div>
+<div class="source-boundary"><strong>Данные источника ≠ разрешение на выпуск Мусхафа</strong><p>Захват production-данных поставщика и их интеграционный допуск — разные этапы. Для первого настоящего урока ещё нужны подтверждённые права использования, точная геометрия слов и решение Controller.</p></div>
 <p class="market-disclaimer">На указанную дату PR остаются Draft. G0 PASS, MERGE, платящие пользователи, продуктовая выручка и product-market fit не подтверждены.</p>
 </div></section>
 
@@ -207,6 +214,11 @@
 <div class="business-panel"><h3>Что должно подтвердить пилот</h3><p>Регулярность занятий, долю завершённых заданий, время проверки Устаза, качество повторения, доверие родителей и реальную готовность платить. Без этих измерений масштабирование — только гипотеза.</p></div>
 </div>
 <div class="pilot-metrics"><span>Повторные занятия</span><span>Завершённые проверки</span><span>Удержание</span><span>Педагогическая польза</span><span>Готовность платить</span></div>
+<div class="pilot-gates" aria-label="Что должен проверить первый пилот">
+  <article><span>01 / УЧЕБНЫЙ РЕЗУЛЬТАТ</span><strong>Ученик завершает цикл «задание → проверка → повторение».</strong><p>Измерить завершение заданий и качество повторения без подмены решения Устаза.</p></article>
+  <article><span>02 / РАБОТА УСТАЗА</span><strong>Проверки понятны и не создают лишней нагрузки.</strong><p>Измерить время проверки, ясность замечаний и необходимость ручных исправлений.</p></article>
+  <article><span>03 / ДОВЕРИЕ И СПРОС</span><strong>Семья понимает, что подтверждено, а что ещё нет.</strong><p>Проверить понимание статусов и готовность платить. Пороговые значения определяются до пилота.</p></article>
+</div>
 <p class="market-disclaimer">Нет утверждённых TAM, CAC, LTV, цен, выручки и оценки компании. Международный рынок — направление исследования, не доказанный результат.</p>
 </div></section>
 
@@ -218,7 +230,7 @@
 <div class="details-inner">
 <div class="grid two" style="margin:0">
 <figure class="screen"><a href="assets/04-audio.png" target="_blank" rel="noopener noreferrer" aria-label="Увеличить изображение: Аудио: будущий выбор чтеца, диапазона и скорости"><img src="assets/04-audio.png" alt="Аудио: будущий выбор чтеца, диапазона и скорости" loading="lazy" decoding="async"></a><figcaption>Аудио: будущий выбор чтеца, диапазона и скорости · Статичный экран будущего WASLAH.</figcaption></figure>
-<figure class="screen"><a href="assets/03-ustaz.png" target="_blank" rel="noopener noreferrer" aria-label="Увеличить изображение: Устаз: будущая проверка чтения"><img src="assets/03-ustaz.png" alt="Guardian и Khatm: будущие учебные сценарии" loading="lazy" decoding="async"></a><figcaption>Устаз: будущая проверка чтения · Статичный экран будущего WASLAH.</figcaption></figure>
+<figure class="screen"><a href="assets/03-ustaz.png" target="_blank" rel="noopener noreferrer" aria-label="Увеличить изображение: Устаз: будущая проверка чтения"><img src="assets/03-ustaz.png" alt="Устаз: будущая проверка чтения" loading="lazy" decoding="async"></a><figcaption>Устаз: будущая проверка чтения · Статичный экран будущего WASLAH.</figcaption></figure>
 </div>
 <div class="grid two"><figure class="screen"><a href="assets/07-mobile-home.png" target="_blank" rel="noopener noreferrer" aria-label="Увеличить изображение: Будущая мобильная главная"><img src="assets/07-mobile-home.png" alt="Будущая мобильная главная" loading="lazy" decoding="async"></a><figcaption>Будущая мобильная главная · Статичный экран будущего WASLAH.</figcaption></figure><figure class="screen"><a href="assets/08-mobile-memory.png" target="_blank" rel="noopener noreferrer" aria-label="Увеличить изображение: Будущее скрытие аятов"><img src="assets/08-mobile-memory.png" alt="Будущее скрытие аятов" loading="lazy" decoding="async"></a><figcaption>Будущее скрытие аятов · Статичный экран будущего WASLAH.</figcaption></figure></div>
 </div></details>
@@ -233,6 +245,12 @@
 <div class="next-goal"><strong>Предмет обсуждения:</strong> программа пилота, участие Устазов, критерии успешности и необходимые ресурсы. Размер инвестиций и доля не предлагаются без отдельного решения Owner.</div>
 <div class="hero-actions"><a class="cta" href="#journey">Вернуться к учебному сценарию <span aria-hidden="true">↗</span></a>
 <a class="cta cta--quiet" href="#evidence">Проверить текущую стадию</a></div>
+<div class="partner-request">
+  <h3>Предложить совместный пилот</h3>
+  <p>Скопируйте краткий запрос и отправьте его по каналу, через который получили ссылку на презентацию. Прямой контакт для инвесторов на сайте пока не опубликован.</p>
+  <button class="partner-request-copy" type="button" data-partner-copy>Скопировать запрос о пилоте</button>
+  <p class="partner-request-status" id="partner-request-status" role="status" aria-live="polite"></p>
+</div>
 </div></section>
 </main>
 <footer><div class="container"><span>WASLAH Tahfiz · Закрытый инвесторский просмотр</span>
