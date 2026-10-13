@@ -384,3 +384,31 @@ main .hidden{display:none}
  .khatm7-selected h4{font-size:23px}
  .guardian-story-card{min-height:260px;padding:23px}
 }
+
+/* R7.2 language switcher: same page, RTL support, no external font loads. */
+.site-language{flex:none;display:inline-flex;gap:3px;padding:4px;background:#14261b;border:1px solid rgba(201,180,134,.28);border-radius:11px;direction:ltr}
+.site-language button{font:inherit;font-size:12px;font-weight:800;letter-spacing:.03em;color:#d2ddcf;background:transparent;border:0;border-radius:7px;min-width:34px;min-height:36px;padding:7px 9px;cursor:pointer}
+.site-language button[aria-pressed="true"]{background:#c9b486;color:#18241b}
+.site-language button:hover:not([aria-pressed="true"]){background:#294032;color:#fff}
+.site-language button:focus-visible{outline:2px solid #f1d89c;outline-offset:2px}
+html[dir="rtl"] body{font-family:Tahoma,"Segoe UI",Arial,sans-serif;line-height:1.78}
+html[dir="rtl"] h1,html[dir="rtl"] h2,html[dir="rtl"] h3,html[dir="rtl"] h4{letter-spacing:0;line-height:1.32}
+html[dir="rtl"] .kicker,html[dir="rtl"] .overline{letter-spacing:0}
+html[dir="rtl"] .hero-visual figcaption{left:auto;right:16px}
+html[dir="rtl"] .khatm7-day-no,html[dir="rtl"] .khatm7-count{direction:ltr}
+html[dir="rtl"] .teacher-demo-result,html[dir="rtl"] .khatm7-selected{line-height:1.7}
+html[dir="rtl"] .roadmap,html[dir="rtl"] .next-goal{border-left:0;border-right:2px solid #c9b486;padding-left:0;padding-right:19px}
+html[dir="rtl"] .status-panel ul{padding-left:0;padding-right:20px}
+html[dir="rtl"] .teacher-demo-word{direction:ltr}
+html[dir="rtl"] .teacher-demo-word::after{content:"اضغط"}
+html[lang="uz"] .teacher-demo-word::after{content:"Bosing"}
+html[lang="ru"] .teacher-demo-word::after{content:"Нажать"}
+@media(max-width:1220px){.site-header .status{display:none}}
+@media(max-width:750px){.site-language{margin-inline-start:auto}}
+@media(max-width:650px){
+ .site-header .header-inner{gap:7px}
+ .site-header .brand img{width:122px}
+ .site-language button{min-width:30px;min-height:35px;padding:7px 6px;font-size:11px}
+ .mobile-nav summary{padding:9px 10px;font-size:12px}
+}
+@media(max-width:380px){.site-header .brand img{width:104px}}

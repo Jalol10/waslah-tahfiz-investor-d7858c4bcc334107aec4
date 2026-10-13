@@ -31,54 +31,32 @@ if("IntersectionObserver" in window){
   const instruction = root.querySelector("#teacher-demo-instruction");
   const counter = root.querySelector("#teacher-demo-counter");
   const hint = root.querySelector("#teacher-demo-hint");
-  const stages = [
-    ["1. Найти слово, которое нужно исправить",
-     "Устаз открывает проверяемый аят и выбирает конкретное слово. Нажмите на слово в золотой рамке слева.",
-     "Далее: тип ошибки →"],
-    ["2. Назвать ошибку",
-     "В карточке выбранного слова Устаз отмечает, что именно было неправильно. Выберите категорию ниже.",
-     "Далее: замечание →"],
-    ["3. Написать пояснение",
-     "Устаз объясняет ученику, какую часть нужно повторить. Для примера можно изменить текст ниже — он никуда не отправляется.",
-     "Далее: повторение →"],
-    ["4. Назначить повторение",
-     "Устаз возвращает задание на повторение. Официальный PASS позднее подтверждается отдельно после реальной проверки.",
-     "Посмотреть итог ↗"]
-  ];
+  const currentT = () => window.WaslahLocale.interactive().teacher;
   const state = {step: 0, kind: "Пропуск слова", assigned: false};
   function update() {
     root.dataset.step = String(state.step + 1);
-    counter.textContent = "Шаг " + (state.step + 1) + " из 4";
+    const t=currentT();
+    const stages=t.stages;
+    counter.textContent=t.counter.replace("{n}",String(state.step+1));
     title.textContent = stages[state.step][0];
     instruction.textContent = stages[state.step][1];
     next.textContent = stages[state.step][2];
     next.disabled = state.step === 3;
     previous.disabled = state.step === 0;
-    hint.textContent = state.step === 0
-      ? "↓ Нажмите на слово в золотой рамке"
-      : "Выбрано слово 2:8:11 · отметка в историческом макете";
+    hint.textContent = state.step === 0 ? t.hintStart : t.hintSelected;
     panels.forEach((p, i) => {p.hidden = i !== state.step});
     stageButtons.forEach((b, i) => {
       if (i === state.step) b.setAttribute("aria-current","step");
       else b.removeAttribute("aria-current");
     });
     categories.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.demoKind === state.kind)));
-    const note = comment.value.trim() || "Повторить выделенный участок.";
-    if (state.assigned) {
-      result.textContent = "Только демонстрация: выбран фрагмент 2:8:11, категория «" +
-        state.kind + "», замечание «" + note + "», назначение REPEAT показано визуально. Ничего не отправлено и не сохранено.";
-    } else {
-      const infos = [
-        "После выбора слова к нему будет прикреплена карточка ошибки. Здесь показан только концепт.",
-        "Категория замечания: «" + state.kind + "». Дальше преподаватель напишет пояснение.",
-        "Категория: «" + state.kind + "». Пример пояснения: «" + note + "».",
-        "Следующий шаг в будущем продукте: назначить REPEAT. Официальный PASS не выдаётся автоматически."
-      ];
-      result.textContent = infos[state.step];
-    }
+    const note = comment.value.trim() || t.fallback;
+    const kind=t.kinds[state.kind]||state.kind;
+    const fmt=s=>s.replaceAll("{kind}",kind).replaceAll("{note}",note);
+    result.textContent=state.assigned?fmt(t.assigned):fmt(t.results[state.step]);
   }
   function goTo(n) {
-    if (n >= 0 && n < stages.length) {
+    if (n >= 0 && n < currentT().stages.length) {
       state.step = n;
       state.assigned = false;
       update();
@@ -99,7 +77,11 @@ if("IntersectionObserver" in window){
       update();
     }
   });
-  comment.addEventListener("input", function () { state.assigned = false; update(); });
+  comment.addEventListener("input", function () {comment.dataset.userEdited="yes";state.assigned=false;update();});
+  document.addEventListener("waslah:language",function(){
+    if(comment.dataset.userEdited!=="yes")comment.value=currentT().defaultNote;
+    update();
+  });
   update();
 })();
 
@@ -108,15 +90,8 @@ if("IntersectionObserver" in window){
   "use strict";
   const root=document.getElementById("khatm7-explorer");
   if(!root)return;
-  const plan=[
-    {letter:"ف",title:"Аль-Фатиха → Ан-Ниса",range:"Суры 1–4 включительно",detail:"Первая часть начинается с Аль-Фатихи. Следующая часть начнётся с Аль-Маиды."},
-    {letter:"م",title:"Аль-Маида → Ат-Тауба",range:"Суры 5–9 включительно",detail:"Вторая часть начинается с Аль-Маиды. Третий день начинается с суры Юнус."},
-    {letter:"ي",title:"Юнус → Ан-Нахль",range:"Суры 10–16 включительно",detail:"Третья часть начинается с Юнуса. Следующая часть начинается с Аль-Исра."},
-    {letter:"ب",title:"Аль-Исра → Аль-Фуркан",range:"Суры 17–25 включительно",detail:"Аль-Исра также известна как «Бану Исраиль» (بني إسرائيل): отсюда буква ب. Пятый день начинается с Аш-Шуара."},
-    {letter:"ش",title:"Аш-Шуара → Йа Син",range:"Суры 26–36 включительно",detail:"Пятая часть начинается с Аш-Шуара. Следующая часть начинается с Ас-Саффат."},
-    {letter:"و",title:"Ас-Саффат → Аль-Худжурат",range:"Суры 37–49 включительно",detail:"В традиционном делении начало шестой части — «Ва-с-Саффат» (والصافات), отсюда буква و. Последний день начинается с Каф."},
-    {letter:"ق",title:"Каф → Ан-Нас",range:"Суры 50–114 включительно",detail:"Седьмая часть начинается с Каф и заканчивается Ан-Нас — заключительной сурой Корана."}
-  ];
+  const plan=()=>window.WaslahLocale.interactive().khatm;
+  const letters=["ف","م","ي","ب","ش","و","ق"];
   const b=[...root.querySelectorAll("[data-khatm7-day]")];
   const previous=root.querySelector("[data-khatm7-prev]");
   const next=root.querySelector("[data-khatm7-next]");
@@ -127,17 +102,19 @@ if("IntersectionObserver" in window){
   const detail=root.querySelector("#khatm7-selected-detail");
   let current=0;
   function show(n){
-    if(!Number.isInteger(n)||n<0||n>=plan.length)return;
+    const t=plan();
+    const days=t.days;
+    if(!Number.isInteger(n)||n<0||n>=days.length)return;
     current=n;
-    const item=plan[n];
+    const item=days[n];
     b.forEach((button,i)=>button.setAttribute("aria-pressed",String(i===n)));
     number.textContent=String(n+1).padStart(2,"0")+" / 07";
-    kicker.textContent="ДЕНЬ "+(n+1)+" · "+item.letter;
-    title.textContent=item.title;
-    range.textContent=item.range;
-    detail.textContent=item.detail;
+    kicker.textContent=t.dayLabel.replace("{n}",String(n+1)).replace("{letter}",letters[n]);
+    title.textContent=item[0];
+    range.textContent=item[1];
+    detail.textContent=item[2];
     previous.disabled=n===0;
-    next.disabled=n===plan.length-1;
+    next.disabled=n===days.length-1;
   }
   root.addEventListener("click",function(event){
     const btn=event.target.closest("[data-khatm7-day]");
@@ -145,5 +122,6 @@ if("IntersectionObserver" in window){
     if(event.target.closest("[data-khatm7-prev]"))show(current-1);
     if(event.target.closest("[data-khatm7-next]"))show(current+1);
   });
+  document.addEventListener("waslah:language",()=>show(current));
   show(0);
 })();
