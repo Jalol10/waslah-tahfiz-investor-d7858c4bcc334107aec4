@@ -125,3 +125,21 @@ if("IntersectionObserver" in window){
   document.addEventListener("waslah:language",()=>show(current));
   show(0);
 })();
+
+/* R8: local-only pilot enquiry handoff. No email destination or personal data is stored. */
+(function(){
+  "use strict";
+  const button=document.querySelector("[data-partner-copy]");
+  const status=document.getElementById("partner-request-status");
+  if(!button||!status)return;
+  button.addEventListener("click",async function(){
+    const t=window.WaslahLocale.interactive().partner;
+    try {
+      if(!navigator.clipboard||typeof navigator.clipboard.writeText!=="function")throw Error("Clipboard unavailable");
+      await navigator.clipboard.writeText(t.request);
+      status.textContent=t.copied;
+    } catch (_) {
+      status.textContent=t.failed;
+    }
+  });
+})();
