@@ -445,3 +445,15 @@ html[dir="rtl"] .teacher-demo-field [data-demo-reference]{direction:ltr;unicode-
 html[dir="rtl"] .teacher-demo-word{direction:ltr}
 @media(max-width:900px){.pilot-gates{grid-template-columns:1fr}html[dir="rtl"] .teacher-demo-mushaf{border-left:0}}
 @media(max-width:650px){.guardian-proof-head{flex-wrap:wrap}.partner-request{padding:18px}.pilot-gates article{padding:17px}.source-boundary{padding:14px}}
+
+/* R8 investor owner-provided direct contact links; no fabricated handles or CRM. */
+.partner-contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0 14px}
+.partner-contact-link{display:flex;flex-direction:column;gap:7px;padding:18px 19px;background:rgba(11,27,18,.85);border:1px solid rgba(201,180,134,.26);border-radius:12px;min-width:0;transition:border-color .15s,background .15s}
+.partner-contact-link:hover{background:rgba(32,53,37,.8);border-color:var(--gold)}
+.partner-contact-link:focus-visible{outline:2px solid var(--mint);outline-offset:3px}
+.partner-contact-type{font-size:12px;font-weight:750;color:var(--gold)}
+.partner-contact-value{display:block;max-width:100%;font-size:clamp(12px,1.4vw,17px);font-weight:700;overflow-wrap:anywhere;text-align:start;unicode-bidi:isolate;color:var(--ink)}
+.partner-contact-action{font-size:12px;font-weight:700;color:var(--dim)}
+.partner-contact-note{font-size:12px!important;line-height:1.55!important;color:var(--muted)!important}
+.partner-request-copy-wrap{margin-top:18px;border-top:1px solid var(--border);padding-top:18px}
+@media(max-width:650px){.partner-contact-grid{grid-template-columns:1fr}.partner-contact-link{padding:16px}.partner-contact-value{font-size:15px}}
