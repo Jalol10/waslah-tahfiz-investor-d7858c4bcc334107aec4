@@ -143,3 +143,22 @@ if("IntersectionObserver" in window){
     }
   });
 })();
+
+
+/* R8 Figma Desktop-localized static screenshots. Original RU and Quran text are unchanged. */
+(function () {
+  "use strict";
+  const nodes=Array.from(document.querySelectorAll("img[data-r8-media],a[data-r8-media]"));
+  function localize() {
+    const lang=(window.WaslahLocale&&window.WaslahLocale.get())||document.documentElement.lang||"ru";
+    for (const node of nodes) {
+      const filename=lang==="uz"||lang==="ar"
+        ? "assets/r8-"+lang+"-"+node.dataset.r8Media+".webp"
+        : node.dataset.r8Original;
+      if(node.tagName==="IMG"&&node.getAttribute("src")!==filename)node.setAttribute("src",filename);
+      if(node.tagName==="A"&&node.getAttribute("href")!==filename)node.setAttribute("href",filename);
+    }
+  }
+  document.addEventListener("waslah:language",localize);
+  localize();
+})();

@@ -457,3 +457,7 @@ html[dir="rtl"] .teacher-demo-word{direction:ltr}
 .partner-contact-note{font-size:12px!important;line-height:1.55!important;color:var(--muted)!important}
 .partner-request-copy-wrap{margin-top:18px;border-top:1px solid var(--border);padding-top:18px}
 @media(max-width:650px){.partner-contact-grid{grid-template-columns:1fr}.partner-contact-link{padding:16px}.partner-contact-value{font-size:15px}}
+
+
+/* Localized R8 Figma screens supersede the old Russian-text image caveat. */
+.figure-language-warning,html[lang="uz"] .figure-language-warning,html[lang="ar"] .figure-language-warning{display:none}
