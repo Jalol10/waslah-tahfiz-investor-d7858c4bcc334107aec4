@@ -305,3 +305,82 @@ main .hidden{display:none}
  .teacher-demo-controls {padding-top:15px}
  .teacher-demo-controls button {font-size:11px;padding:9px 11px}
 }
+
+/* Historic WASLAH R007 signature 7, scoped investor concept. No live Quran or reading progress. */
+.section--khatm7{background:radial-gradient(ellipse 80% 70% at 20% 30%,rgba(88,113,74,.12),transparent 75%);}
+.section--khatm7 .section-heading [lang="ar"]{font-family:"Noto Naskh Arabic","Traditional Arabic",serif;font-size:1.23em;color:var(--gold);white-space:nowrap}
+.khatm7-layout{display:grid;grid-template-columns:minmax(0,.91fr) minmax(0,1.09fr);gap:18px;align-items:stretch}
+.khatm7-hero-card{position:relative;overflow:hidden;min-height:525px;display:flex;flex-direction:column;gap:24px;padding:clamp(23px,3vw,36px);border:1px solid rgba(201,180,134,.43);border-radius:21px;background:linear-gradient(145deg,#274c38 0%,#13271c 48%,#0b1710 100%);box-shadow:inset 0 1px 1px rgba(255,255,255,.08),0 22px 72px rgba(0,0,0,.13)}
+.khatm7-hero-card::before{content:"";position:absolute;z-index:0;pointer-events:none;inset:-20% -36%;background:radial-gradient(circle at 32% 49%,rgba(212,183,105,.23),transparent 34%)}
+.khatm7-hero-card>*{position:relative;z-index:1}
+.khatm7-card-top,.khatm7-card-footer{display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap;font-size:10px;font-weight:760;letter-spacing:.1em;color:#e0d0a5}
+.khatm7-legacy-label{border:1px solid rgba(222,188,106,.4);border-radius:999px;padding:6px 10px}
+.khatm7-seven-lockup{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:23px;margin:17px 0 3px}
+.khatm7-seven{font-size:clamp(145px,17vw,238px);line-height:.78;font-weight:850;letter-spacing:-.095em;background:linear-gradient(158deg,#f5deb0,#caab62 63%,#aa8540);color:transparent;-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 14px 20px rgba(214,168,76,.09));padding:4px 5px 16px 0}
+.khatm7-lockup-copy{display:flex;flex-direction:column;gap:6px;min-width:0}
+.khatm7-ar{font-size:clamp(25px,3vw,40px);line-height:1.4;color:#eddda8;font-family:"Noto Naskh Arabic","Traditional Arabic","Times New Roman",serif}
+.khatm7-lockup-copy strong{font-size:clamp(21px,2.6vw,30px);line-height:1.1;letter-spacing:-.035em;color:#f8f1e0}
+.khatm7-lockup-copy span:last-child{font-size:12px;color:#bacbb9;line-height:1.45;max-width:250px}
+.khatm7-description{font-size:16px;line-height:1.62;color:#e4e9da;margin:0;max-width:445px}
+.khatm7-emphasis{color:#f3db9e;font-size:14px;font-weight:750;line-height:1.45;margin-top:auto;padding:12px 15px;border-left:3px solid #c9a963;background:rgba(11,20,14,.28)}
+.khatm7-card-footer{padding-top:15px;border-top:1px solid rgba(201,180,134,.18);font-size:9px;line-height:1.5}
+.khatm7-card-footer span:last-child{color:#94b6a0}
+.khatm7-explorer{padding:clamp(20px,2.6vw,29px);background:#111f17;border:1px solid var(--border);border-radius:21px;display:flex;flex-direction:column;min-width:0}
+.khatm7-explorer-head{display:flex;justify-content:space-between;align-items:start;gap:12px}
+.khatm7-explorer-head h3{font-size:23px;letter-spacing:-.03em;margin:2px 0 0;color:#f7f4eb}
+.khatm7-mini-label{color:var(--gold);font-size:10px;font-weight:800;letter-spacing:.12em}
+.khatm7-count{font-size:12px;font-weight:750;color:var(--gold);padding:6px 11px;background:rgba(201,180,134,.09);border-radius:7px;white-space:nowrap}
+.khatm7-day-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;margin:23px 0 21px}
+.khatm7-day{font:inherit;cursor:pointer;min-width:0;min-height:99px;background:#192b20;color:#e3ece0;border:1px solid rgba(186,213,189,.2);border-radius:11px;padding:10px 2px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transition:border-color .12s,background .12s}
+.khatm7-day:hover,.khatm7-day:focus-visible{border-color:var(--gold);outline-offset:2px}
+.khatm7-day[aria-pressed="true"]{border-color:#dfc482;background:rgba(201,180,134,.17);box-shadow:inset 0 0 0 1px rgba(201,180,134,.1)}
+.khatm7-day-no{font-size:11px;letter-spacing:.1em;color:#d6c39b}
+.khatm7-day-letter{font-family:"Noto Naskh Arabic","Traditional Arabic",serif;font-size:29px;line-height:1.3;color:#f5eccf}
+.khatm7-day-name{font-size:10px;line-height:1.2;color:#b6cab8;white-space:nowrap}
+.khatm7-selected{padding:24px 24px 18px;background:linear-gradient(135deg,#203d2a,#172b1e);border:1px solid rgba(201,180,134,.26);border-radius:15px;min-height:205px}
+.khatm7-selected-kicker{font-size:12px;font-weight:800;letter-spacing:.11em;color:var(--gold)}
+.khatm7-selected h4{font-size:clamp(22px,2.2vw,29px);line-height:1.24;letter-spacing:-.035em;color:#fff8ea;margin:12px 0 6px}
+.khatm7-selected-range{color:#dbc79a;font-size:13px;font-weight:740}
+.khatm7-selected p{font-size:13px;color:#c0d1c1;line-height:1.55;margin:13px 0 0}
+.khatm7-controls{display:flex;justify-content:space-between;gap:12px;margin-top:14px}
+.khatm7-controls button{font:inherit;font-size:12px;font-weight:720;min-height:43px;padding:9px 15px;border:1px solid rgba(201,180,134,.27);border-radius:9px;background:#26372a;color:#f7f1dc;cursor:pointer}
+.khatm7-controls button:last-child{color:#151e17;background:var(--gold);border-color:var(--gold)}
+.khatm7-controls button:disabled{opacity:.4;cursor:default}
+.khatm7-local-only{font-size:11px;color:#9baea0;margin:15px 0 0;line-height:1.48}
+.khatm7-modes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin:19px 0 0}
+.khatm7-modes>div{border-top:1px solid rgba(201,180,134,.31);padding:16px 4px 0}
+.khatm7-modes strong{display:block;font-size:15px;color:#ecdfc1;margin-bottom:8px}
+.khatm7-modes p{color:var(--dim);font-size:13px;line-height:1.6;margin:0}
+.guardian-story-card{border:1px solid rgba(201,180,134,.2);border-radius:15px;background:linear-gradient(145deg,#192b20,#0d1812);padding:31px;min-height:330px;display:flex;flex-direction:column;justify-content:center;gap:11px}
+.guardian-story-card .guardian-story-eyebrow{color:var(--gold);font-size:10px;letter-spacing:.13em;font-weight:800}
+.guardian-story-card strong{color:#f4efe2;font-size:clamp(19px,2.6vw,28px);line-height:1.17;letter-spacing:-.034em}
+.guardian-story-card p{font-size:14px;color:var(--dim);line-height:1.55}
+.guardian-story-card a{font-size:13px;color:var(--gold);font-weight:760}
+@media(max-width:1110px){
+ .khatm7-layout{grid-template-columns:1fr}
+ .khatm7-hero-card{min-height:330px}
+ .khatm7-seven-lockup{justify-content:start}
+ .khatm7-seven{font-size:clamp(130px,17vw,200px)}
+}
+@media(max-width:750px){
+ .khatm7-modes{grid-template-columns:1fr}
+ .khatm7-modes>div{padding:12px 2px 0}
+}
+@media(max-width:650px){
+ .khatm7-hero-card,.khatm7-explorer{padding:18px;border-radius:17px}
+ .khatm7-hero-card{gap:15px;min-height:unset}
+ .khatm7-card-top,.khatm7-card-footer{font-size:9px}
+ .khatm7-seven-lockup{gap:15px;margin:4px 0 0}
+ .khatm7-seven{font-size:133px}
+ .khatm7-ar{font-size:26px}
+ .khatm7-lockup-copy strong{font-size:21px}
+ .khatm7-description{font-size:14px}
+ .khatm7-emphasis{font-size:13px}
+ .khatm7-explorer-head h3{font-size:19px}
+ .khatm7-day-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+ .khatm7-day{min-height:78px}
+ .khatm7-day-letter{font-size:25px}
+ .khatm7-selected{padding:20px 15px;min-height:210px}
+ .khatm7-selected h4{font-size:23px}
+ .guardian-story-card{min-height:260px;padding:23px}
+}
